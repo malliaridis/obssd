@@ -1,0 +1,26 @@
+name: Assign to Project
+
+on:
+  issues:
+    types: [opened, labeled]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  assign_one_project:
+    runs-on: ubuntu-latest
+    name: Assign to Project
+    steps:
+    - name: Assign new issues with `bug` label to project 1
+      uses: srggrs/assign-one-project-github-action@1.2.0
+      if: github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug')
+      with:
+        project: 'https://github.com/malliaridis/obssd/projects/1'
+        column_name: 'Needs triage'
+        
+    - name: Assign new issues with `needs approval` label to project 2
+      uses: srggrs/assign-one-project-github-action@1.2.0
+      if: github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'needs approval')
+      with:
+        project: 'https://github.com/malliaridis/obssd/projects/2'
+        column_name: 'Needs approval'

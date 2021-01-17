@@ -8,8 +8,7 @@ labels: bug
 READ CAREFULLY:
 This is a template for reporting a bug.
 First things first: check if there is already an issue reporting the same bug where you might 
-only provide further information instead of starting a new issue. 
-If that is not the case, here are some tips for filling out the following template:
+only provide further information instead of starting a new issue. If that is not the case, here are some tips for filling out the following template:
 - Hints are not shown in the issue as long as they are commented out
 - Comments that are not visible start with `\<!--` and end with `--\>`
 - It is recommended to follow the template as much as possible
@@ -54,3 +53,4 @@ Tested devices:
 - screenshot(s) of visualising the bug
 - error logs
 - any useful background infromation
+-->
